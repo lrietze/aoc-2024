@@ -8,17 +8,26 @@ import java.util.Map;
 
 public class Day1 {
     public static void main(String[] args) throws IOException, URISyntaxException {
-        solve();
-    }
-
-    private static void solve() throws IOException, URISyntaxException {
         Map<String,List<Integer>> map = InputReader.parseInputFileColumnsToLists("day1.txt");
         List<Integer> left = map.get("left");
         List<Integer> right = map.get("right");
         ListUtil.sortIntegerList(left);
         ListUtil.sortIntegerList(right);
 
-        int diff = ListUtil.totalDifferenceBetweenLists(left, right);
-        System.out.println(String.valueOf(diff));
+        solvePart1(left, right);
+        solvePart2(left, right);
+    }
+
+    public static void solvePart1(List<Integer> left, List<Integer> right) throws IOException, URISyntaxException {
+        System.out.println("Total difference: " + String.valueOf(ListUtil.totalDifferenceBetweenLists(left, right)));
+    }
+
+    public static void solvePart2(List<Integer> left, List<Integer> right) {
+        int value = 0;
+        for (int i : left) {
+            value += i * ListUtil.totalOccurrenceOfIntInList(right, i);
+        }
+
+        System.out.println("Similarity score: " + String.valueOf(value));
     }
 }

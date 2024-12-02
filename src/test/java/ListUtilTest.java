@@ -26,4 +26,11 @@ public class ListUtilTest {
             ListUtil.totalDifferenceBetweenLists(left, longerLengthList);
         });
     }
+
+    @Test
+    void testTotalOccurrenceOfIntInList() {
+        List<Integer> list = Arrays.asList(1, 2, 3, 1, 1);
+        int count = ListUtil.totalOccurrenceOfIntInList(list, 1);
+        assertEquals(3, count);
+    }
 }
