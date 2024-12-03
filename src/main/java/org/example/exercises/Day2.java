@@ -10,16 +10,16 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-public class Day2 extends Exercise {
-    public ExerciseOutput<Long, Long> solve(InputReader inputReader) throws Exception {
-        List<Report> reports = inputReader.getInputStream().map(Report::from).toList();
-
-        long part1 = reports.stream().filter(Report::isSafe).count();
-//        long part2 = reports.stream().filter(Report::isSafeWithTolerance).count();
-
-        System.out.println("Total Number of Good Reports: " + String.valueOf(part1));
-        return new ExerciseOutput<>(part1, 0L);
-    }
+public class Day2  {
+//    public ExerciseOutput<Long, Long> solve(InputReader inputReader) throws Exception {
+//        List<Report> reports = inputReader.getInputStream().map(Report::from).toList();
+//
+//        long part1 = reports.stream().filter(Report::isSafe).count();
+////        long part2 = reports.stream().filter(Report::isSafeWithTolerance).count();
+//
+//        System.out.println("Total Number of Good Reports: " + String.valueOf(part1));
+//        return new ExerciseOutput<>(part1, 0L);
+//    }
 
 /*
     public static void solvePart1(int[][] array) {
