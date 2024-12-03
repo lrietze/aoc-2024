@@ -42,4 +42,27 @@ public class InputReaderTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    void testReadInputAs2DArray() {
+        try {
+            String[][] result = InputReader.readInputAs2DArray("test2darray.txt");
+            assertNotNull(result);
+            assertEquals("[[1, 2, 3, 4, 5], [4, 5, 6], [7, 8, 9, 10]]", Arrays.deepToString(result));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    void testReadInputAs2DIntArray() {
+        try {
+            int[][] result = InputReader.readInputAs2DIntArray("test2darray.txt");
+            assertNotNull(result);
+            assertEquals("[[1, 2, 3, 4, 5], [4, 5, 6], [7, 8, 9, 10]]", Arrays.deepToString(result));
+            assertEquals(3, result.length);
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
 }

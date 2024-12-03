@@ -11,12 +11,31 @@ import java.util.List;
 import java.util.Map;
 
 public class InputReader {
-    public static String readInput(String fileName) throws IOException, URISyntaxException, NullPointerException {
-        return Files.readString(getPath(fileName));
-    }
-
     private static Path getPath(String fileName) throws URISyntaxException {
         return Paths.get(ClassLoader.getSystemResource("inputs/" + fileName).toURI());
+    }
+
+    public static String[][] readInputAs2DArray(String fileName) throws URISyntaxException, IOException {
+        return Files.lines(getPath(fileName))
+                .map(line -> line.split("\\s+"))
+                .toArray(String[][]::new);
+    }
+
+    public static int[][] readInputAs2DIntArray(String filename) throws IOException, URISyntaxException {
+        return Files.lines(getPath(filename))
+                .map(line -> line.split("\\s+"))
+                .map(arr -> {
+                    int[] intArr = new int[arr.length];
+                    for (int i = 0; i < arr.length; i++) {
+                        intArr[i] = Integer.parseInt(arr[i]);
+                    }
+                    return intArr;
+                })
+                .toArray(int[][]::new);
+    }
+
+    public static String readInput(String fileName) throws IOException, URISyntaxException, NullPointerException {
+        return Files.readString(getPath(fileName));
     }
 
     public static Map<String,List<Integer>> parseInputFileColumnsToLists(String fileName) throws IOException, URISyntaxException, NullPointerException {
