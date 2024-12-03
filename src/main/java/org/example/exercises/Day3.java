@@ -16,6 +16,7 @@ public class Day3 {
     public static void main(String[] args) throws IOException, URISyntaxException {
         String input = InputReader.readInput("day3.txt");
         part1(input);
+        part2(input);
     }
 
     private static void part1(String input) {
@@ -29,6 +30,13 @@ public class Day3 {
         System.out.println("Total: " + total);
     }
 
-    private static void part2() {
+    private static void part2(String input) {
+        // does the do() dont() crap, then outputs
+
+        Long total = 0L;
+
+        // summation of the values
+
+        System.out.println("Total: " + total);
     }
 }
